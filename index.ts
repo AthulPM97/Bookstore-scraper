@@ -26,7 +26,14 @@ const main = async () => {
     }))
     return data;
   })
-  console.log(bookData)
+  // console.log(bookData)
+
+  const listData = await page.evaluate(() => {
+    const navList = document.querySelectorAll('.nav-list')
+    return navList
+  })
+  console.log(listData[0])
+ 
   await browser.close();
 };
 
